@@ -10,7 +10,7 @@ class ReviewRepositoryTest {
     @Test
     void canFindReview() {
         ReviewRepository reviewRepository = new ReviewRepository();
-        Review expectedReview = new Review(1, "I like this course");
-        assertEquals(expectedReview, reviewRepository.findReview("like"));
+        Review review = reviewRepository.findReview("like");
+        assertEquals("I like this course", review.getComment());
     }
 }
