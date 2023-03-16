@@ -14,8 +14,12 @@ public class ReviewRepository {
     }
     public Review findReview(String keyword) {
         for (Review review : reviews) {
-            if (review.getComment().contains(keyword)) {
-                return review;
+            if (keyword == null) {
+                return null;
+            } else {
+                if (review.getComment().contains(keyword)) {
+                    return review;
+                }
             }
         }
         return null;
